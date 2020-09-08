@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DD51034-FD5E-4115-A666-AB8533669F21}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EUFA</RootNamespace>
+    <AssemblyName>EUFA</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddEditPlayer.xaml.cs">
+      <DependentUpon>AddEditPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditTeams.xaml.cs">
+      <DependentUpon>AddEditTeams.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditTournament.xaml.cs">
+      <DependentUpon>AddEditTournament.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Db\EufaContext.cs" />
+    <Compile Include="Db\Players.cs" />
+    <Compile Include="Db\Position.cs" />
+    <Compile Include="Db\Region.cs" />
+    <Compile Include="Db\StageGame.cs" />
+    <Compile Include="Db\sysdiagrams.cs" />
+    <Compile Include="Db\Teams.cs" />
+    <Compile Include="Db\Tournaments.cs" />
+    <Compile Include="Db\TournamentTeams.cs" />
+    <Compile Include="ManageExecution.xaml.cs">
+      <DependentUpon>ManageExecution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\AllocateTeams.xaml.cs">
+      <DependentUpon>AllocateTeams.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManageGroupStage.xaml.cs">
+      <DependentUpon>ManageGroupStage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTeams.xaml.cs">
+      <DependentUpon>ManageTeams.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTournament.xaml.cs">
+      <DependentUpon>ManageTournament.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AddEditTournamentModel.cs" />
+    <Compile Include="Model\GroupModel.cs" />
+    <Compile Include="Model\IDraw.cs" />
+    <Compile Include="Model\ManageTeamsModel.cs" />
+    <Compile Include="TopMenu.xaml.cs">
+      <DependentUpon>TopMenu.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddEditPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEditTeams.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEditTournament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ManageExecution.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\AllocateTeams.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Manager\ManageGroupStage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManageTeams.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManageTournament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TopMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\afc.png" />
+    <Resource Include="assets\afghanistan.png" />
+    <Resource Include="assets\albania.png" />
+    <Resource Include="assets\algeria.png" />
+    <Resource Include="assets\andorra.png" />
+    <Resource Include="assets\angola.png" />
+    <Resource Include="assets\argentina.png" />
+    <Resource Include="assets\armenia.png" />
+    <Resource Include="assets\australia.png" />
+    <Resource Include="assets\austria.png" />
+    <Resource Include="assets\azerbaijan.png" />
+    <Resource Include="assets\bahrain.png" />
+    <Resource Include="assets\belarus.png" />
+    <Resource Include="assets\belgium.png" />
+    <Resource Include="assets\benin.png" />
+    <Resource Include="assets\bhutan.png" />
+    <Resource Include="assets\bolivia.png" />
+    <Resource Include="assets\bosnia-and-herzegovina.png" />
+    <Resource Include="assets\botswana.png" />
+    <Resource Include="assets\brazil.png" />
+    <Resource Include="assets\bulgaria.png" />
+    <Resource Include="assets\burkina-faso.png" />
+    <Resource Include="assets\burundi.png" />
+    <Resource Include="assets\caf.png" />
+    <Resource Include="assets\cambodia.png" />
+    <Resource Include="assets\cameroon.png" />
+    <Resource Include="assets\cape-verde.png" />
+    <Resource Include="assets\central-african-republic.png" />
+    <Resource Include="assets\chad.png" />
+    <Resource Include="assets\chile.png" />
+    <Resource Include="assets\china.png" />
+    <Resource Include="assets\colombia.png" />
+    <Resource Include="assets\comoros.png" />
+    <Resource Include="assets\copa-libertadores.png" />
+    <Resource Include="assets\costa-rica.png" />
+    <Resource Include="assets\croatia.png" />
+    <Resource Include="assets\cyprus.png" />
+    <Resource Include="assets\czech-republic.png" />
+    <Resource Include="assets\default.png" />
+    <Resource Include="assets\democratic-republic-of-the-congo.png" />
+    <Resource Include="assets\denmark.png" />
+    <Resource Include="assets\east-timor.png" />
+    <Resource Include="assets\ecuador.png" />
+    <Resource Include="assets\egypt.png" />
+    <Resource Include="assets\el-salvador.png" />
+    <Resource Include="assets\england.png" />
+    <Resource Include="assets\equatorial-guinea.png" />
+    <Resource Include="assets\estonia.png" />
+    <Resource Include="assets\ethiopia.png" />
+    <Resource Include="assets\faroe-islands.png" />
+    <Resource Include="assets\finland.png" />
+    <Resource Include="assets\france.png" />
+    <Resource Include="assets\gabon.png" />
+    <Resource Include="assets\gambia.png" />
+    <Resource Include="assets\georgia.png" />
+    <Resource Include="assets\germany.png" />
+    <Resource Include="assets\ghana.png" />
+    <Resource Include="assets\greece.png" />
+    <Resource Include="assets\guam.png" />
+    <Resource Include="assets\guinea-bissau.png" />
+    <Resource Include="assets\guinea.png" />
+    <Resource Include="assets\honduras.png" />
+    <Resource Include="assets\hong-kong.png" />
+    <Resource Include="assets\hungary.png" />
+    <Resource Include="assets\iceland.png" />
+    <Resource Include="assets\india.png" />
+    <Resource Include="assets\iran.png" />
+    <Resource Include="assets\iraq.png" />
+    <Resource Include="assets\ireland.png" />
+    <Resource Include="assets\israel.png" />
+    <Resource Include="assets\italy.png" />
+    <Resource Include="assets\ivory-coast.png" />
+    <Resource Include="assets\jamaica.png" />
+    <Resource Include="assets\japan.png" />
+    <Resource Include="assets\jordan.png" />
+    <Resource Include="assets\kazakhstan.png" />
+    <Resource Include="assets\kenya.png" />
+    <Resource Include="assets\kuwait.png" />
+    <Resource Include="assets\laos.png" />
+    <Resource Include="assets\latvia.png" />
+    <Resource Include="assets\lebanon.png" />
+    <Resource Include="assets\lesotho.png" />
+    <Resource Include="assets\libya.png" />
+    <Resource Include="assets\liechtenstein.png" />
+    <Resource Include="assets\lithuania.png" />
+    <Resource Include="assets\luxembourg.png" />
+    <Resource Include="assets\macedonia.png" />
+    <Resource Include="assets\madagascar.png" />
+    <Resource Include="assets\malawi.png" />
+    <Resource Include="assets\malaysia.png" />
+    <Resource Include="assets\maldives.png" />
+    <Resource Include="assets\mali.png" />
+    <Resource Include="assets\malta.png" />
+    <Resource Include="assets\mauritania.png" />
+    <Resource Include="assets\mauritius.png" />
+    <Resource Include="assets\mexico.png" />
+    <Resource Include="assets\moldova.png" />
+    <Resource Include="assets\montenegro.png" />
+    <Resource Include="assets\morocco.png" />
+    <Resource Include="assets\mozambique.png" />
+    <Resource Include="assets\myanmar.png" />
+    <Resource Include="assets\namibia.png" />
+    <Resource Include="assets\netherlands.png" />
+    <Resource Include="assets\niger.png" />
+    <Resource Include="assets\nigeria.png" />
+    <Resource Include="assets\north-ireland.png" />
+    <Resource Include="assets\north-korea.png" />
+    <Resource Include="assets\norway.png" />
+    <Resource Include="assets\oman.png" />
+    <Resource Include="assets\palestine.png" />
+    <Resource Include="assets\panama.png" />
+    <Resource Include="assets\paraguay.png" />
+    <Resource Include="assets\peru.png" />
+    <Resource Include="assets\philippines.png" />
+    <Resource Include="assets\poland.png" />
+    <Resource Include="assets\portugal.png" />
+    <Resource Include="assets\qatar.png" />
+    <Resource Include="assets\republic-of-the-congo.png" />
+    <Resource Include="assets\romania.png" />
+    <Resource Include="assets\russia.png" />
+    <Resource Include="assets\rwanda.png" />
+    <Resource Include="assets\saint-vincent-and-the-grenadines.png" />
+    <Resource Include="assets\san-marino.png" />
+    <Resource Include="assets\sao-tome-and-principe.png" />
+    <Resource Include="assets\saudi-arabia.png" />
+    <Resource Include="assets\scotland.png" />
+    <Resource Include="assets\senegal.png" />
+    <Resource Include="assets\serbia.png" />
+    <Resource Include="assets\seychelles.png" />
+    <Resource Include="assets\sierra-leone.png" />
+    <Resource Include="assets\singapore.png" />
+    <Resource Include="assets\slovakia.png" />
+    <Resource Include="assets\slovenia.png" />
+    <Resource Include="assets\south-africa.png" />
+    <Resource Include="assets\south-korea.png" />
+    <Resource Include="assets\south-sudan.png" />
+    <Resource Include="assets\spain.png" />
+    <Resource Include="assets\sudan.png" />
+    <Resource Include="assets\swaziland.png" />
+    <Resource Include="assets\sweden.png" />
+    <Resource Include="assets\switzerland.png" />
+    <Resource Include="assets\syria.png" />
+    <Resource Include="assets\tanzania.png" />
+    <Resource Include="assets\tunisia.png" />
+    <Resource Include="assets\turkey.png" />
+    <Resource Include="assets\turkmenistan.png" />
+    <Resource Include="assets\uefa.png" />
+    <Resource Include="assets\uganda.png" />
+    <Resource Include="assets\ukraine.png" />
+    <Resource Include="assets\united-arab-emirates.png" />
+    <Resource Include="assets\uruguay.png" />
+    <Resource Include="assets\usa.png" />
+    <Resource Include="assets\uzbekistan.png" />
+    <Resource Include="assets\venezuela.png" />
+    <Resource Include="assets\wales.png" />
+    <Resource Include="assets\world.png" />
+    <Resource Include="assets\yemen.png" />
+    <Resource Include="assets\zambia.png" />
+    <Resource Include="assets\zimbabwe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

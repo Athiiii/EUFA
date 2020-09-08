@@ -1,0 +1,31 @@
+﻿<Application x:Class="EUFA.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EUFA"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontFamily"  Value="Tahoma"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily"  Value="Tahoma"/>
+        </Style>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontFamily"  Value="Tahoma"/>
+        </Style>
+        <Style TargetType="{x:Type ListView}">
+            <Setter Property="FontFamily"  Value="Tahoma"/>
+        </Style>
+        <Style TargetType="{x:Type DataGrid}">
+            <Setter Property="FontFamily"  Value="Tahoma"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="FontFamily"  Value="Tahoma"/>
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="FontFamily"  Value="Tahoma"/>
+        </Style>
+        <SolidColorBrush x:Key="OrangeBrown" Color="#AC5E00" />
+        <SolidColorBrush x:Key="Yellow" Color="#003065" />
+    </Application.Resources>
+</Application>

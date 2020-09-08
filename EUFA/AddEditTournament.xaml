@@ -1,0 +1,56 @@
+﻿<Window x:Class="EUFA.AddEditTournament"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EUFA"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Add/Edit Tournament" Height="450" Width="600">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" Grid.Row="0" Margin="0,5">Tournament name</Label>
+        <Label VerticalAlignment="Center" Grid.Row="1" Margin="0,5">Start date</Label>
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="2" Margin="0,20">
+            <Label Padding="4,0">Participating teams</Label>
+            <LineBreak/>            
+            <Label Padding="4,0" x:Name="SelectedParticipants">(0/24 selected)</Label>
+        </TextBlock>
+        <GroupBox Grid.Row="3" Header="Filter by region" Margin="4,0">
+            <WrapPanel Orientation="Vertical">
+                <RadioButton GroupName="Region" Content="All" Checked="RadioButton_Checked" IsChecked="True" />
+                <RadioButton GroupName="Region" Content="Africa" Checked="RadioButton_Checked" />
+                <RadioButton GroupName="Region" Content="America" Checked="RadioButton_Checked" />
+                <RadioButton GroupName="Region" Content="Asia" Checked="RadioButton_Checked" />
+                <RadioButton GroupName="Region" Content="Europe" Checked="RadioButton_Checked" />
+                <RadioButton GroupName="Region" Content="Others" Checked="RadioButton_Checked" />
+            </WrapPanel>
+        </GroupBox>
+        <TextBox SelectionChanged="TournamentsName_SelectionChanged" FontSize="15" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="400" Name="TournamentsName" />
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
+            <DatePicker SelectedDate="{x:Static sys:DateTime.Now}" Name="StartDay" SelectedDateChanged="Day_SelectedDateChanged" />
+            <Label Margin="40,0">End date</Label>
+            <DatePicker Name="EndDay" SelectedDateChanged="Day_SelectedDateChanged" Width="130" />
+        </StackPanel>
+        <DataGrid x:Name="TeamsList" AutoGenerateColumns="False" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" SelectionChanged="TeamsList_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn IsReadOnly="False" Header="Participation" MinWidth="100" Binding="{Binding Member}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Team" MinWidth="200" Binding="{Binding Teams.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <WrapPanel Grid.Row="4" Grid.Column="1">
+            <Button Padding="20,5" Content="Save and Close"  Margin="0,3,30,0" Click="Save" Name="SaveBtn"/>
+            <Button Padding="20,5" Content="Close"  Margin="0,3,30,0" Click="Close"/>
+        </WrapPanel>
+    </Grid>
+</Window>

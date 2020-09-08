@@ -1,0 +1,7 @@
+﻿Could not parse the configuration file. The error message is: 'The 'connectionStrings' start tag on line 20 position 4 does not match the end tag of 'configuration'. Line 21, position 3.'. Try editing the file manually and then saving it.
+Generated model file: Eufa.cs.
+Loading metadata from the database took 00:00:00.3618945.
+Generating the model took 00:00:00.7417378.
+Generated model file: Eufa.cs.
+Loading metadata from the database took 00:00:00.1924180.
+Generating the model took 00:00:00.6125415.

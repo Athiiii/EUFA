@@ -1,0 +1,40 @@
+﻿<Window x:Class="EUFA.Manager.ManageGroupStage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EUFA.Manager"
+        mc:Ignorable="d"
+        Title="ManageGroupStage" Height="450" Width="500">
+    <Grid Margin="10" x:Name="Table">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ComboBox Name="GroupList" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Grid.ColumnSpan="2" SelectionChanged="GroupList_SelectionChanged">
+            <ComboBoxItem Tag="A" IsSelected="True" Content="Group A" />
+            <ComboBoxItem Tag="B" Content="Group B" />
+            <ComboBoxItem Tag="C" Content="Group C" />
+            <ComboBoxItem Tag="D" Content="Group D" />
+            <ComboBoxItem Tag="E" Content="Group E" />
+            <ComboBoxItem Tag="F" Content="Group F" />
+        </ComboBox>
+        <Label FontWeight="Bold" Grid.Row="1" VerticalAlignment="Center">Game</Label>
+        <Label FontWeight="Bold" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">Result</Label>
+        <Button Grid.Column="2" Margin="5" Grid.Row="8">Finish Group Stage</Button>
+        <Button Padding="20,5" Grid.Column="3" Margin="5" Grid.Row="8" Click="Close">Close</Button>
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="EUFA.TopMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EUFA"
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="800">
+    <Menu>
+        <MenuItem Header="_File">
+            <MenuItem Header="Exit" Click="Exit" />
+        </MenuItem>
+        <MenuItem Header="_Manage">
+            <MenuItem Header="Manage Tournaments" Click="ManageTournaments"/>
+            <MenuItem Header="Manage Teams" Click="ManageTeams" />
+            <MenuItem Header="Manage Execution" Click="ManageExecutions" />
+        </MenuItem>
+    </Menu>
+</UserControl>

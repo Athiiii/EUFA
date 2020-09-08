@@ -1,0 +1,38 @@
+﻿<Window x:Class="EUFA.AddEditPlayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EUFA"
+        mc:Ignorable="d"
+        Title="Add/Edit Player" Height="300" Width="500">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Last name</Label>
+        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">First name</Label>
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Position</Label>
+        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center">Shirt Number</Label>
+        <TextBox SelectionChanged="TextBoxChanged" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" FontSize="15" Name="Lastname" />
+        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" FontSize="15"  Name="Firstname" />
+        <ComboBox SelectionChanged="DataChanged" Name="PositionsList"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
+        <WrapPanel Grid.Column="1" Grid.Row="3" VerticalAlignment="Center">
+            <TextBox Width="50" SelectionChanged="TextBoxChanged" FontSize="15" Name="ShirtNumber" PreviewTextInput="CheckInput" />
+            <Label Margin="20,0,10,0">Date of birth</Label>
+            <DatePicker Name="Birthday" SelectedDateChanged="DataChanged"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Margin="10">
+            <Button Padding="20,4" Margin="10,0" Click="Save" Name="SaveBtn">Save and Close</Button>
+            <Button Padding="20,4" Margin="10,0" Click="Close">Close</Button>
+        </WrapPanel>
+    </Grid>
+</Window>
